@@ -40,3 +40,4 @@ listint_t *insert_node(listint_t **head, int number)
 	newnode->next = NULL;
 	transv->next = newnode;
 	return (newnode);
+}
