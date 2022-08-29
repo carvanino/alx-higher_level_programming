@@ -1,4 +1,4 @@
-#include "list.h"
+#include "lists.h"
 
 /**
  * reserve_listint - reverses a linked list
@@ -9,7 +9,7 @@
  *
  */
 
-listint_t *reverse_listint(lisint_t **head)
+listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *transv, *nextnode;
 
@@ -41,12 +41,12 @@ size_t listint_len(listint_t *head)
 	size_t no_nodes;
 	listint_t *transv;
 
-	trans_v = head;
-	no_node = 0;
+	transv = head;
+	no_nodes = 0;
 	while (transv != NULL)
 	{
 		no_nodes++;
-		trans_v = trans_v->next;
+		transv = transv->next;
 	}
 	return (no_nodes);
 }
@@ -65,15 +65,15 @@ int is_palindrome(listint_t **head)
 	listint_t *rev_list, *transv, *mid_list;
 	size_t nodes, i;
 
-	if (*head == NULL || *(head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1); /*An Empty list or one with a single node */
 	nodes = listint_len(*head); /* get the size of list */
 
 	transv = *head;
 	/* Get the middle of the list */
-	for (i = 0; i < (size / 2) - 1; i++)
+	for (i = 0; i < (nodes / 2) - 1; i++)
 		transv = transv->next;
-	if ((size % 2) == 0 && transv->n != tmp->next->n)
+	if ((nodes % 2) == 0 && transv->n != transv->next->n)
 		return (0);
 	transv = transv->next->next;
 	rev_list = reverse_listint(&transv);
@@ -82,7 +82,7 @@ int is_palindrome(listint_t **head)
 	transv = *head;
 	while (rev_list != NULL)
 	{
-		if (ransv->n != rev_list->n)
+		if (transv->n != rev_list->n)
 			return (0);
 		transv = transv->next;
 		rev_list = rev_list->next;
