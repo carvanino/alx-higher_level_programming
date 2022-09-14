@@ -51,12 +51,14 @@ class Square:
 
     def my_print(self):
         """ Prints a graphical representation of square size to stdout """
-        if self.__position[1] > 0:
-            print()
+        #if self.__position[1] > 0:
+            #print()
         if self.__size == 0:
             print()
-        else:
-            for i in range(self.__size):
-                for a in range(self.__position[0]):
-                    print(" ", end='')
-                print("#" * self.__size)
+        if self.__position[1] > 0:
+            print()
+    #else:
+        for i in range(self.__size):
+            for a in range(self.__position[0]):
+                print(" ", end='')
+            print("#" * self.__size)
