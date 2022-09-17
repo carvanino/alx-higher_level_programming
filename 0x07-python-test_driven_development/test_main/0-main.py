@@ -18,6 +18,6 @@ try:
 except Exception as e:
     print (e)
 try:
-    print(add_integer((float(20.6))))
+    print(add_integer((float('nan'))))
 except Exception as e:
     print(e)
