@@ -43,5 +43,5 @@ Now use it:
 	Traceback (most recent call last):
 	TypeError: last_name must be a string
 
-	full_name("0x16", "-Cob7")
+	>>> full_name("0x16", "-Cob7")
 	My name is 0x16 -Cob7
