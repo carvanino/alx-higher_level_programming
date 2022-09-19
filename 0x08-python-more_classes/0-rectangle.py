@@ -8,4 +8,5 @@ Simple Rectangle
 
 
 class Rectangle:
+    """ Defines class Rectangle """
     pass
