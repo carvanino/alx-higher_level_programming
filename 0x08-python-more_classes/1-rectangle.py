@@ -1,27 +1,28 @@
 #!/usr/bin/python3
 """ Module 1-rectangle
 
-Defines a Simple rectange with attribute
+Defines a simple rectangle with attribute
 
 """
 
 
 class Rectangle:
     """ Defines the Rectangle class """
+
     def __init__(self, width=0, height=0):
         """
         Initialize class
 
         Args:
             width: (int) Defaults to 0
-            height: (int) Defauts to 0
+            height: (int) Defaults to 0
 
         Raises:
             TypeError: width or height must be an integer
-            ValueError: width or height must be >= 0
-       """
+            TypeError: width or height must be >= 0
+        """
         self.width = width
-        self.height = height
+        self.height = heighy
 
         @property
         def width(self):
@@ -39,7 +40,7 @@ class Rectangle:
 
         @property
         def height(self):
-            """ Retrieves private attribute (height)"""
+            """ Retrieves private attribute (height) """
             return self.__height
 
         @height.setter
