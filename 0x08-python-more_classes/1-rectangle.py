@@ -22,7 +22,7 @@ class Rectangle:
             TypeError: width or height must be >= 0
         """
         self.width = width
-        self.height = heighy
+        self.height = height
 
         @property
         def width(self):
