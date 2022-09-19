@@ -30,13 +30,12 @@ class Rectangle:
         """
         r_str = ''
         if self.__width == 0 or self.__height == 0:
-            return 0
+            return ''
         for length in range(self.__height):
             for breadth in range(self.__width):
                 r_str = r_str + '#'
             r_str += '\n'
         return r_str[:-1]
-
 
     @property
     def width(self):

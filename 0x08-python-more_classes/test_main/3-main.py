@@ -7,6 +7,10 @@ print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perime
 print(str(my_rectangle))
 print(repr(my_rectangle))
 
+print()
+my_rectangle.width = 0
+my_rectangle.height = 0
+print(str(my_rectangle))
 print("--")
 
 my_rectangle.width = 10
