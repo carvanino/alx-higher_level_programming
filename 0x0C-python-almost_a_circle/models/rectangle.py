@@ -20,6 +20,7 @@ class Rectangle(Base):
     def width(self):
         """Retrieves the private attribute (width)"""
         return self.__width
+
     @width.setter
     def width(self, value):
         """Set the width of the class to value """
@@ -29,24 +30,27 @@ class Rectangle(Base):
     def height(self):
         """Retrives the private attribute (height) """
         return self.__height
+
     @height.setter
     def height(self, value):
         """Sets the (height) as a private attribute """
         self.__height = value
-    
+
     @property
     def x(self):
         """ Retrieves the private attribute (x) """
         return self.__x
+
     @x.setter
     def x(self, value):
         """Sets (x) as a private attribute """
         self.__x = value
-    
+
     @property
     def y(self):
         """ Retrieves the private attribute (y) """
         return self.__y
+
     def y(self, value):
         """Sets (y) as a private attribute """
         self.__y = value
