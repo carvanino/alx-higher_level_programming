@@ -7,17 +7,18 @@ Houses a Base class with private attributes
 class Base:
     """ Defines the class Base
     """
-    
+
     __nb_objects = 0
 
-    def __init__(self, id=None) -> None:
+    def __init__(self, id=None):
         """ Initializes an Instance of class
 
         Args:
             id: (int) Defaults as None
-        
-        """
 
+        """
         if id != None:
             self.id = id
-        Base.__nb_objects += 1
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
