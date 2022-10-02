@@ -15,7 +15,12 @@ class Square(Rectangle):
     def __str__(self):
         """ Prints an informal representation of an instance
         """
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width))
+
+        id = self.id
+        x = self.x
+        y = self.y
+        width = self.width
+        return ("[Square] ({}) {}/{} - {}".format(id, x, y, width))
 
     @property
     def size(self):
@@ -33,11 +38,11 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """ 
+        """ Assigns attributes to an instance
         """
 
         list_t = ['id', 'size', 'x', 'y']
-        if args != None and len(args) != 0:
+        if args is not None and len(args) != 0:
             for i, arg in enumerate(args):
                 setattr(self, list_t[i], arg)
         else:

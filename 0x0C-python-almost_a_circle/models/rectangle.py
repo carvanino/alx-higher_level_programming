@@ -92,7 +92,12 @@ class Rectangle(Base):
     def __str__(self):
         """ Prints an informal representaion of an instance Rectangle
         """
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        id = self.id
+        x = self.__x
+        y = self.__y
+        w = self.__width
+        h = self.__height
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(id, x, y, w, h))
 
     def update(self, *args, **kwargs):
         """ Assigns an argument args to each attribute
