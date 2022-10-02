@@ -46,7 +46,7 @@ class Base:
 
         filename = '{}.json'.format(cls.__name__)
         print(filename)
-        list_dict = [] # a list of object dictionaries
+        list_dict = []  # a list of object dictionaries
         if list_objs is None:
             with open(filename, mode='w') as f:
                 f.write(list_dict)
@@ -81,8 +81,26 @@ class Base:
         """
 
         if cls.__name__ == 'Rectangle':
-            dummy = cls(1, 3, 2, 0, 1) # (width, height, x, y, id)
+            dummy = cls(1, 3, 2, 0, 1)  # (width, height, x, y, id)
         elif cls.__name__ == 'Square':
-            dummy = cls(4, 2, 2, 1) # (size, x, y, id)
+            dummy = cls(4, 2, 2, 1)  # (size, x, y, id)
         dummy.update(**dictionary)
-        return dummy # The instance that has all attributes set
+        return dummy  # The instance that has all attributes set
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances
+        """
+
+        filename = '{}.json'.format(cls.__name__)
+        if filename is None:
+            return []
+        list_instance = []
+        with open(filename, 'r') as f:
+            json_string = f.read()
+        list_dict = cls.from_json_string(json_string)
+
+        for i in range(len(list_dict)):
+            list_instance.append(cls.create(**list_dict[i]))
+
+        return list_instance
