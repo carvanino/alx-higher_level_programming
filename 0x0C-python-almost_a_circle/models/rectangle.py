@@ -3,6 +3,7 @@
 Houses a subclass Rectangle
 """
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -104,3 +105,14 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Returns a dictionary representation of a Rectangle
+        """
+
+        list_t = ['id', 'width', 'height', 'x', 'y']
+        new_dict = {}
+        for element in range(len(list_t)):
+            for key in list_t:
+                new_dict[key] = getattr(self, key)
+        return (new_dict)
