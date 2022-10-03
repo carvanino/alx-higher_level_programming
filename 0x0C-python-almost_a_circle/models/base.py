@@ -2,7 +2,9 @@
 """Base Module
 Houses a Base class with private attributes
 """
+import os.path
 import json
+import csv
 
 
 class Base:
@@ -93,7 +95,7 @@ class Base:
         """
 
         filename = '{}.json'.format(cls.__name__)
-        if filename is None:
+        if os.path.exists(filename) is False:
             return []
         list_instance = []
         with open(filename, 'r') as f:
@@ -104,3 +106,57 @@ class Base:
             list_instance.append(cls.create(**list_dict[i]))
 
         return list_instance
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Saves a dictionary representation of an instance
+        to a CSV file - Serializing
+
+        """
+
+        filename = '{}.csv'.format(cls.__name__)
+        if filename == 'Square.csv':
+            fields = ['id', 'size', 'x', 'y']
+        elif filename == 'Rectangle.csv':
+            fields = ['id', 'width', 'height', 'x', 'y']
+
+        l_dict = []
+        for obj in list_objs:
+            l_dict.append(obj.to_dictionary())
+
+        with open(filename, 'w') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(l_dict)
+            """
+            for obj in list_objs:
+                writer.writerow(obj.to_dictionary())
+            """
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Returns a list of dictionary from a CSV file
+        - Deserializing
+        """
+
+        filename = '{}.csv'.format(cls.__name__)
+        if os.path.exists(filename) is False:
+            return []
+        if filename == 'Rectangle.csv':
+            fields = ['id', 'width', 'height', 'x', 'y']
+        elif filename == 'Square.csv':
+            fields = ['id', 'size', 'x', 'y']
+
+        with open(filename) as csvfile:
+            csvreader = csv.reader(csvfile)
+            objs = []
+            for x, row in enumerate(csvreader):
+                if x == 0:  # i.e this is the first row or header
+                    continue
+                obj_dict = {}
+                for i, field in enumerate(fields):
+                    # print('From csvreader: {}' .format(int(row[i])))
+                    obj_dict[field] = int(row[i])
+
+                objs.append(cls.create(**obj_dict))
+        return objs
