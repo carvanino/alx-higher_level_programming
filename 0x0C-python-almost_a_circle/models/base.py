@@ -15,10 +15,8 @@ class Base:
 
     def __init__(self, id=None):
         """ Initializes an Instance of class
-
         Args:
             id: (int) Defaults as None
-
         """
         if id is not None:
             self.id = id
@@ -41,7 +39,6 @@ class Base:
     def save_to_file(cls, list_objs):
         """ Writes the JSON string representation of list_objs
         to a file
-
         Args:
             list_objs: a list of class instances
         """
@@ -73,13 +70,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Returns an instance with all attribute set
-
         Args:
             **dictionary: used as a keyword argument **kwargs
-
         Return:
             The instance created
-
         """
 
         if cls.__name__ == 'Rectangle':
@@ -111,7 +105,6 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """ Saves a dictionary representation of an instance
         to a CSV file - Serializing
-
         """
 
         filename = '{}.csv'.format(cls.__name__)
