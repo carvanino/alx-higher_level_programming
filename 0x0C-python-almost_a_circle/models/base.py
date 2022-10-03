@@ -153,3 +153,4 @@ class Base:
 
                 objs.append(cls.create(**obj_dict))
         return objs
+
