@@ -49,7 +49,7 @@ class Base:
         filename = '{}.json'.format(cls.__name__)
         #print(filename)
         list_dict = []  # a list of object dictionaries
-        if list_objs is None or len(list_objs) > 0:
+        if list_objs is None or len(list_objs) == 0:
             with open(filename, mode='w') as f:
                 f.write(list_dict)
         else:
