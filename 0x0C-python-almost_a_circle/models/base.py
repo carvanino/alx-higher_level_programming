@@ -83,7 +83,7 @@ class Base:
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)  # (width, height, x, y, id)
         elif cls.__name__ == 'Square':
-            dummy = cls(1, 1)  # (size, x, y, id)
+            dummy = cls(1)  # (size, x, y, id)
         dummy.update(**dictionary)
         return dummy  # The instance that has all attributes set
 
