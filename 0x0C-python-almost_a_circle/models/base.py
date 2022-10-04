@@ -48,7 +48,7 @@ class Base:
 
         filename = '{}.json'.format(cls.__name__)
         #  print(filename)
-        list_dict = []  #  a list of object dictionaries
+        list_dict = []  # a list of object dictionaries
         if list_objs is None or len(list_objs) == 0:
             with open(filename, mode='w') as f:
                 f.write("[]")
@@ -66,9 +66,9 @@ class Base:
         """
 
         if json_string is None or len(json_string) == 0:
-            return {}
+            return []
         else:
-            
+
             return json.loads(json_string)
 
     @classmethod
