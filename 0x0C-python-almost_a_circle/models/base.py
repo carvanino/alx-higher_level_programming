@@ -24,5 +24,5 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            BAse.__nb_objects += 1
+            Base.__nb_objects += 1
             self.id = BAse.__nb_objects
