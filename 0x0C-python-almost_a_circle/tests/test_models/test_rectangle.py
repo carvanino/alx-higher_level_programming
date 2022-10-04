@@ -2,6 +2,9 @@
 """ Unittest module for Rectangle class
 """
 import unittest
+from io import StringIO
+from unittest import TestCase
+from unittest.mock import patch
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -21,7 +24,7 @@ class TestRectangleMethods(unittest.TestCase):
 
         new = Rectangle(4, 2)
         self.assertEqual(new.width, 4)
-        self.asssertEqual(new.height, 2)
+        self.assertEqual(new.height, 2)
         self.assertEqual(new.x, 0)
         self.assertEqual(new.y, 0)
         self.assertEqual(new.id, 1)
@@ -51,7 +54,7 @@ class TestRectangleMethods(unittest.TestCase):
         new = Rectangle(1, 1)
         self.assertEqual(True, isinstance(new, Base))
 
-     def test_incorrect_amount_attrs(self):
+    def test_incorrect_amount_attrs(self):
         """ Test error raise with 1 arg passed """
         with self.assertRaises(TypeError):
             new = Rectangle(1)

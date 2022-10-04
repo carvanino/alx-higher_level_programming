@@ -4,6 +4,9 @@
 
 
 import unittest
+from io import StringIO
+from unittest import TestCase
+from unittest.mock import patch
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
