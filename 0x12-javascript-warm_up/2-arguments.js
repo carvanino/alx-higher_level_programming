@@ -2,8 +2,9 @@
 
 const args = process.argv;
 const length = args.length;
+/*
 switch (length) {
-  case 2:
+    case 2:
     console.log('No argument');
     break;
   case 3:
@@ -12,4 +13,12 @@ switch (length) {
   default:
     console.log('Arguments Found');
     break;
+} */
+
+if (length <= 2) {
+  console.log('No argument');
+} else if (length === 3) {
+  console.log('Argument Found');
+} else {
+  console.log('Arguments Found');
 }
