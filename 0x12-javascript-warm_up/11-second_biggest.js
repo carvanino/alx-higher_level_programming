@@ -13,14 +13,14 @@ if (length <= 3) {
         temp = args[j];
         args[j] = args[i];
         args[i] = temp;
-	/*console.log(args[i]);*/
-	/*console.log(args[j]);*/
+        /* console.log(args[i]); */
+        /* console.log(args[j]); */
       }
     }
   }
-  /*for (let i=2; i < length; i++) {
-	  console.log(args[i]);*/
-  }
+  /* for (let i=2; i < length; i++) {
+   * console.log(args[i]); */
   console.log(args[length - 2]);
 }
+/* console.log(args[length - 2]); */
 /* console.log(args[3]); */
