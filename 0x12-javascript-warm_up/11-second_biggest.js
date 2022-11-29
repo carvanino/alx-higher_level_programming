@@ -17,10 +17,10 @@ if (length <= 3) {
         /* console.log(args[j]); */
       }
     }
-	  console.log('i is:', i);
+	  /*console.log('i is:', i);*/
   }
-  for (let i = 2; i < length; i++) {
+  /*for (let i = 2; i < length; i++) {
     console.log(args[i]);
-  }
+  }*/
   console.log(args[length - 2]);
 }
