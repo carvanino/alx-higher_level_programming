@@ -21,7 +21,8 @@ if __name__ == '__main__':
             WHERE states.name LIKE '{}%' \
             ORDER BY states.id ASC;".format(sys.argv[4]))
 
-    state = cur.fetchone()
-    print(state)
+    state = cur.fetchall()
+    for state in state:
+        print(state)
     cur.close()
     db.close()
