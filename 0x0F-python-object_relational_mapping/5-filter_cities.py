@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cur.execute("SELECT cities.name FROM cities\
             JOIN states\
             ON cities.state_id = states.id\
-            WHERE states.name = %s\
+            WHERE states.name = %s \
             ORDER BY cities.id ASC;", (sys.argv[4], ))
     cities = cur.fetchall()
 
@@ -29,5 +29,6 @@ if __name__ == '__main__':
             print(city[0])
         else:
             print(city[0], end=', ')
+
     cur.close()
     db.close()
