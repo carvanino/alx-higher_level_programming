@@ -6,7 +6,7 @@ Displays all values in table states where name matches the argument
 import MySQLdb
 import sys
 
-arg = sys.argv[4]
+# arg = sys.argv[4]
 
 if __name__ == '__main__':
     db = MySQLdb.connect(
@@ -17,9 +17,10 @@ if __name__ == '__main__':
             db=sys.argv[3])
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states\
-            WHERE states.name LIKE '{}%'\
-            ORDER BY states.id ASC;".format(arg))
+    cur.execute("SELECT * FROM states \
+            WHERE states.name LIKE '{}%' \
+            ORDER BY states.id ASC;".format(sys.argv[4]))
+
     state = cur.fetchone()
     print(state)
     cur.close()
