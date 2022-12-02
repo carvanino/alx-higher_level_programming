@@ -9,7 +9,9 @@ from sqlalchemy.ext.declarative import declarative_base
 mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
 
+
 class State(Base):
+
     """
     Class State that inherits from Base and links to the
     MySQL table state in database hbtn_0e_6_usa.states
@@ -18,4 +20,3 @@ class State(Base):
 
     id = Column(Integer, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-
