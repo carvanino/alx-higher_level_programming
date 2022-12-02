@@ -11,7 +11,8 @@ Base = declarative_base(metadata=mymetadata)
 
 class State(Base):
     """
-
+    Class State that inherits from Base and links to the
+    MySQL table state in database hbtn_0e_6_usa.states
     """
     __tablename__ = 'states'
 
