@@ -6,7 +6,7 @@ Displays all values in table states where name matches the argument
 import MySQLdb
 import sys
 
-arg = sys.argv[4]
+# arg = sys.argv[4]
 
 if __name__ == '__main__':
     db = MySQLdb.connect(
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     cur = db.cursor()
     cur.execute("SELECT * FROM states\
             WHERE states.name = %s\
-            ORDER BY states.id ASC;", (arg, ))
+            ORDER BY states.id ASC;", (sys.argv[4], ))
     state = cur.fetchone()
     print(state)
     cur.close()
