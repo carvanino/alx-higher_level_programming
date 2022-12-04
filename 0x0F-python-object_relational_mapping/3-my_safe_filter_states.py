@@ -18,9 +18,11 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states\
+
             WHERE states.name = %s\
             ORDER BY states.id ASC;", (sys.argv[4], ))
-    state = cur.fetchone()
-    print(state)
+    states = cur.fetchall()
+    for state in states:
+        print(state)
     cur.close()
     db.close()
