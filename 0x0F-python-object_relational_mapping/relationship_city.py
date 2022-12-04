@@ -7,8 +7,8 @@ from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from relationship_state import Base, State
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
+#mymetadata = MetaData()
+#Base = declarative_base(metadata=mymetadata)
 
 
 class City(Base):
