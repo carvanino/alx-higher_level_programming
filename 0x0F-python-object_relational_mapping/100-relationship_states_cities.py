@@ -18,10 +18,9 @@ if __name__ == '__main__':
 
     new_state = State(name='California')
     new_city = City(name='San Francisco', state=new_state)
-    #city = City(name='San Fransico')
+    # city = City(name='San Fransico')
     # new_state.cities.append(city)
 
     session.add(new_city)
     session.commit()
     session.close()
-
