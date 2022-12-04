@@ -27,9 +27,10 @@ if __name__ == '__main__':
 
     for i, city in enumerate(cities):
         if i == len(cities) - 1:
-            print(city[0])
+            print(city[0], end='')
         else:
             print(city[0], end=', ')
+    print("")
 
     cur.close()
     db.close()
