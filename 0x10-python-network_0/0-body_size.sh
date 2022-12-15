@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 # Takes in a URL, sends a request to a URL and displayes the
 # size of the body of the respose
 
