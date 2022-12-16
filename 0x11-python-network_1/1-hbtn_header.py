@@ -13,6 +13,6 @@ if __name__ == '__main__':
     with urllib.request.urlopen(url) as response:
         data = dict(response.headers)
         try:
-        print(data['X-Request-Id'])
+            print(data['X-Request-Id'])
         except KeyError:
             pass
