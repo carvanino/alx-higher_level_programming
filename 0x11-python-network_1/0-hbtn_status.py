@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""a module that fetches https://alx-intranet.hbtn.io/status"""
+""" a module that fetches https://alx-intranet.hbtn.io/status """
 from urllib import request
-
 
 if __name__ == "__main__":
     page = request.Request("https://intranet.hbtn.io/status")
