@@ -11,5 +11,8 @@ if __name__ == "__main__":
     r = requests.get(
             'https://api.github.com/user',
             auth=HTTPBasicAuth(sys.argv[1], sys.argv[2]))
-    r_dict = r.json()
-    print(r_dict['id'])
+    try:
+        r_dict = r.json()
+        print(r_dict['id'])
+    except KeyError:
+        print("None")
