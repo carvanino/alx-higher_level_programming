@@ -14,10 +14,11 @@ if __name__ == "__main__":
     else:
         q = ""
     r = requests.post(url, data={'q': q})
-    r_json = r.json()
-    if not isinstance(r_json, dict):
+    try:
+        r_json = r.json()
+        if r_json:
+            print("[{}] {}".format(r_json['id'], r_json['name']))
+        elif r_json == {}:
+            print('No result')
+    except ValueError:
         print('Not a valid JSON')
-    elif r_json == {}:
-        print('No result')
-    else:
-        print("[{}] {}".format(r_json['id'], r_json['name']))
