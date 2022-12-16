@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" a module that fetches https://alx-intranet.hbtn.io/status """
+""" A module that fetches from a url """
 from urllib import request
 
 if __name__ == "__main__":
