@@ -12,4 +12,7 @@ if __name__ == '__main__':
     request = urllib.request.Request(url)
     with urllib.request.urlopen(url) as response:
         data = dict(response.headers)
-        print(data['X-Request-Id'])
+        try:
+            print(data['X-Request-Id'])
+        except KeyError:
+            pass
