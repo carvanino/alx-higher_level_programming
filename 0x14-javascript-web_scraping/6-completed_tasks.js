@@ -9,17 +9,15 @@ request.get(args[2], function (error, response, body) {
     const userTask = {};
     const data = JSON.parse(body);
     for (const task of data) {
-      if (task.userId === id) {
-        // console.log(task.completed)
-        if (task.completed === true) {
-          count += 1;
-        }
-      } else if (task.completed === true && task.userId !== id) {
-        id += 1;
-        count = 1;
+	if (task.completed) {
+		if (task.userId in userTask) {
+			userTask[task.userId]++;
+		}
+		else {
+			userTask[task.userId] = 1
+		}
+	}
       }
-      userTask[id] = count;
-    }
     console.log(userTask);
   }
   // console.log(userTask);
